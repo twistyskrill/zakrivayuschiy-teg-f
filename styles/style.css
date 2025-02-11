@@ -371,9 +371,9 @@ button {
   backdrop-filter: brightness(20%);
 }
 
-@media (width <= 375px) {
+@media (width <= 500px) {
   .header {
-    width: 100vw;
+    width: 100%;
   }
 
   .dialog__window {
@@ -382,7 +382,7 @@ button {
   }
 
   .card {
-    width: 100vw;
+    width: 100%;
   }
 
   .save__button {
