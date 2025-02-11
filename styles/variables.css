@@ -8,4 +8,17 @@
   --header-height: clamp(20.438rem, 3.85vw + 19.535rem, 23rem);
   --heart-contour-color: #000;
   --heart-main-color: #ff0000;
+  --bg-image: repeating-linear-gradient(to right, #d3d3d3 0 2px, transparent 2px 4px),
+              repeating-linear-gradient(to top, #d3d3d3 0 2px, transparent 2px 4px),
+              linear-gradient(to bottom, #e7e7e7, #1a1a1a);
+  --text-stroke-color: #fff;
+  --button-text-color: #fff;
+  --header-bg-color: #fff;
+  --card-bg-color: #fff;
+  --label-color: #000;
+  --bordered-color: #000;
+  --buton-hover-color: #000;
+  --normal-font-size: 18px;
+  --small-font-size: 14px;
+  --save-bg-color: #fff;
 }
