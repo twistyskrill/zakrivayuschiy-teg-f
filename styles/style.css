@@ -371,7 +371,7 @@ button {
   backdrop-filter: brightness(20%);
 }
 
-@media (width <= 500px) {
+@media (width <= 375px) {
   .header {
     width: 100%;
   }
