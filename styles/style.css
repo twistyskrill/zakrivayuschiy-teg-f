@@ -194,11 +194,6 @@ button {
   mix-blend-mode: difference;
 }
 
-.card__icon-button {
-  border: none;
-  padding: 9px 12px 0 0;
-}
-
 .card__icon-button:focus {
   outline: none;
 }
@@ -378,7 +373,7 @@ button {
 
 @media (width <= 375px) {
   .header {
-    width: 100%;
+    width: 100vw;
   }
 
   .dialog__window {
@@ -387,7 +382,7 @@ button {
   }
 
   .card {
-    width: 100%;
+    width: 100vw;
   }
 
   .save__button {
