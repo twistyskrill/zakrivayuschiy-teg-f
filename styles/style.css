@@ -8,40 +8,13 @@
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 */
 
-@keyframes button-bg {
-  from {
-    transform: translateX(-100%);
-  }
 
-  to {
-    transform: translateX(0);
-  }
-}
-
-@keyframes upscale {
-  from {
-    transform: scale(1);
-  }
-  
-  to {
-    transform: scale(1.25);
-  }
-}
-
-@keyframes sparks {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--main-font), sans-serif;
-  font-variation-settings: var(--normal-font-weight);
+  font-variation-settings: "wght" var(--normal-font-weight);
   background-image: var(--bg-image);
   background-attachment: fixed;
   background-size: cover;
@@ -61,6 +34,7 @@
   justify-content: center;
   align-items: center;
   margin-block-start: 100px;
+  border: 2px solid var(--bordered-color);
 }
 
 .logo {
@@ -72,6 +46,7 @@
 .header__title {
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 .header__description {
@@ -90,6 +65,7 @@
   inline-size: clamp(23.438rem, 30.516vw + 16.285rem, 43.75rem);
   height: 100%;
   display: grid;
+  border: 2px solid var(--bordered-color);
 }
 
 .card__title {
@@ -101,6 +77,7 @@
 .image__container {
   position: relative;
   height: 100%;
+  border: 2px solid #000;
 }
 
 .html__label {
@@ -131,6 +108,8 @@
 .card__image {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .content {
@@ -152,10 +131,6 @@
   block-size: 38px;
 }
 
-.bordered {
-  border: 2px solid var(--bordered-color) ;
-}
-
 button {
   background-color: transparent;
 }
@@ -163,10 +138,15 @@ button {
 .button {
   position: relative;
   overflow: auto;
+  border: 2px solid var(--bordered-color);
+  cursor: pointer;
 }
 
 .button:focus {
   outline: none;
+}
+
+.button:focus-visible {
   box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 1);
   transition: box-shadow .3s ease;
 }
@@ -178,11 +158,11 @@ button {
   background-color: var(--buton-hover-color);
   width: 100%;
   height: 100%;
-  animation: button-bg .5s ease-in-out;
+  animation: buttonBgSwitch .5s ease-in-out;
 }
 
 .card__like-button {
-  width: 130px;
+  min-width: 130px;
 }
 
 .button__text {
@@ -226,13 +206,11 @@ button {
 
 .like-icon:hover .core {
   fill: var(--heart-contour-color, #000);
-  transition-delay: 0;
   transition-duration: 0.3s;
 }
 
 .like-icon:active .core {
   fill: var(--heart-main-color, #ff0000);
-  transition-delay: 0;
   transition-duration: 0.3s;
 }
 
@@ -271,12 +249,12 @@ button {
 }
 
 .like-icon.is-liked .sparks {
-  animation: sparks 0.3s ease-in;
+  animation: sparksOpacitySwitch 0.3s ease-in alternate;
   animation-delay: 0.3s;
 }
 
 .is-liked .heart {
-  animation: upscale 0.3s ease-in;
+  animation: heartScaleUp 0.3s ease-in alternate;
   animation-delay: 0.1s;
   transform-origin: center;
 }
@@ -320,7 +298,7 @@ button {
   gap: 8px;
   padding: 15px 21px 15px 19px;
   margin-block-start: 50px;
-  margin-block-end: 100px;
+  margin-block-end: 103px;
   background-color: var(--save-bg-color, #fff);
 }
 
@@ -357,7 +335,7 @@ button {
   text-transform: uppercase;
 }
 
-.ok__button {
+.confirm__button {
   display: flex; 
   justify-self: center;
   justify-content: center;
@@ -368,7 +346,7 @@ button {
 }
 
 .dialog__window[open]::backdrop {
-  backdrop-filter: brightness(20%);
+  backdrop-filter: brightness(25%);
 }
 
 @media (width <= 375px) {
@@ -388,6 +366,7 @@ button {
   .save__button {
     display: grid;
     justify-items: center;
+    margin-block-end: 100px;
   }
 
   .save__button svg {
