@@ -9,18 +9,7 @@
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
 */
-
-@keyframes buttonBgSwitch {
-    from {
-      transform: translateX(-100%);
-    }
-  
-    to {
-      transform: translateX(0);
-    }
-  }
-  
-  @keyframes heartScaleUp {
+@keyframes heartScaleUp {
     from {
       transform: scale(1);
     }
@@ -28,13 +17,13 @@
     to {
       transform: scale(1.25);
     }
-  }
+}
   
-  @keyframes sparksOpacitySwitch {
+@keyframes sparksOpacitySwitch {
     from {
       opacity: 0;
     }
     to {
       opacity: 1;
     }
-  }
+}
